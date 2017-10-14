@@ -1,7 +1,7 @@
 #pragma once
 #include"StrBlob.h"
 
-// StrBlobÖ¸Õë°éËæÀà
+// StrBlobæŒ‡é’ˆä¼´éšç±»
 class StrBlobPtr {
 private:
 	// private function member
@@ -15,5 +15,5 @@ public:
 	StrBlobPtr() :curr(0) {}
 	StrBlobPtr(StrBlob &a, std::size_t sz = 0) :wptr(a.data), curr(sz) {}
 	std::string& deref() const;
-	StrBlobPtr& incr(); // Ç°×ºµİÔö¡£
+	StrBlobPtr& incr(); // å‰ç¼€é€’å¢ã€‚
 };

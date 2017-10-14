@@ -1,6 +1,6 @@
 #include "StrBlobPtr.h"
 
-/* ******************StrBlobPtr µÄ¶¨Òå*************** */
+/* ******************StrBlobPtr çš„å®šä¹‰*************** */
 std::shared_ptr<std::vector<std::string>>
 StrBlobPtr::check(std::size_t i, const std::string &msg) const {
 	auto ret = wptr.lock();

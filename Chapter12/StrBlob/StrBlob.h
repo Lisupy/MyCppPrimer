@@ -3,7 +3,7 @@
 #include<string>
 #include<memory>
 
-// ÓÑÔªÇ°ÖÃÉùÃ÷
+// å‹å…ƒå‰ç½®å£°æ˜
 class StrBlobPtr;
 class ConstStrBlobPtr;
 

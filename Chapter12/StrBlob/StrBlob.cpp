@@ -10,7 +10,7 @@ using std::initializer_list;
 using std::out_of_range;
 
 
-/* *************** StrBlob µÄ¶¨Òå ****************/
+/* *************** StrBlob çš„å®šä¹‰ ****************/
 StrBlob::StrBlob() :data(make_shared<vector<string>>()) {}
 
 StrBlob::StrBlob(initializer_list<string> il) :
