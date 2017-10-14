@@ -9,10 +9,12 @@ public:
     HasPtr(const HasPtr& other): cnt(other.cnt), p(new std::string(*other.p)) {}
 
     HasPtr& operator=(const HasPtr& rhs){
-        auto new_p = new std::string(*rhs.p);
-        delete p;
-        p = new_p;
-        cnt = rhs.cnt;
+        if (&rhs != this){
+            auto new_p = new std::string(*rhs.p);
+            delete p;
+            p = new_p;
+            cnt = rhs.cnt;
+        }
         return *this;
     }
 
