@@ -21,8 +21,9 @@ int main(){
     // 
     // string s2 = s; // copy constructor
     std::vector<String> vec;
-    for(int i=0; i< 16; ++i){
-        vec.push_back("Hello");
+    String s = "HELLO";
+    for(int i=0; i< 7; ++i){
+        vec.push_back(s);
         cout << "================" << endl;
     }
 }

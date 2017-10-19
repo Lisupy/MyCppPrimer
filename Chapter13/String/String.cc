@@ -30,7 +30,17 @@ String::String(const String& other)
 
 String::~String()
 {
+    clog << "deconstructor" << endl;
     free();
+}
+
+
+String::String(String &&rhs) noexcept:
+    elements(rhs.elements), end(rhs.end)
+{
+    rhs.elements = nullptr;
+    rhs.end = nullptr;
+    clog << "move constructor" << endl;
 }
 
 String& String::operator=(const String& rhs)
@@ -44,6 +54,20 @@ String& String::operator=(const String& rhs)
     clog << "copy-assignment" << endl;
     return *this;
 }
+
+
+String& String::operator=(String &&rhs) noexcept
+{
+    if(&rhs != this){
+        free();
+        elements = rhs.elements;
+        end = rhs.end;
+        elements = end = nullptr;
+    }
+    clog << "move assignment" << endl;
+    return *this;
+}
+
 
 pair<char*, char*>
 String::alloc_n_copy(const char *b, const char *e)

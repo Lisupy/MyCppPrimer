@@ -10,7 +10,9 @@ public:
     String(const char*);
     ~String();
     String(const String&);
+    String(String &&rhs) noexcept;
     String &operator=(const String&);
+    String &operator=(String &&rhs) noexcept;
 
     std::size_t length() const { return end - elements - 1; }
     std::size_t capacity() const { return end - elements; }
