@@ -18,7 +18,7 @@ HasPtr::~HasPtr(){
     }
 }
 
-HasPtr::HasPtr(HasPtr &&rhs):
+HasPtr::HasPtr(HasPtr &&rhs) noexcept:
     cnt(rhs.cnt), p(rhs.p), use(rhs.use)
 {
     rhs.cnt = 0;
@@ -45,7 +45,7 @@ HasPtr::operator=(const HasPtr &rhs){
 
 
 HasPtr&
-HasPtr::operator=(HasPtr &&rhs){
+HasPtr::operator=(HasPtr &&rhs) noexcept{
     if(&rhs != this){
         cnt = rhs.cnt;
         p = rhs.p;
